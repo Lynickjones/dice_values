@@ -1,5 +1,14 @@
 import tkinter as tk
 from tkinter import messagebox
+import random
+from PIL import Image, ImageTk
+
+def roll():
+
+    value = random.randint(1, 20)
+
+    entry_dice.delete(0, tk.END)
+    entry_dice.insert(0, value)
 
 
 def score():
@@ -28,38 +37,58 @@ def score():
 #Criar janela principal
 
 window = tk.Tk()
-window.title("D20")
-window.geometry("400x300")
+window.title("flow D20")
+window.geometry("400x200")
+
+window_bg = tk.PhotoImage(file=r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\background_1.png")
+bg_label = tk.Label(window, image=window_bg)
+bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 #Proficiencia check
 
 prof_var = tk.BooleanVar()
 prof_check = tk.Checkbutton(
                         window, 
-                        text="Proficiencia", 
-                        variable=prof_var
+                        text="Proficiência", 
+                        variable=prof_var,
+                        bg = "red",
+                        fg = "white",
+                        font = ("times new roman", 12, "bold")
                         )
 
-prof_check.pack(pady=10)
+prof_check.pack(pady=1)
 
+botao2 = tk.Button(
+    window,
+    text="Rolar D20",
+    command=roll,
+    bg = "red",
+    fg = "white",
+    font = ("times new roman", 12, "bold") 
+)
 
+botao2.pack(pady=2)
 #Entrada de dados
 
 label_dice = tk.Label(window,
-                     text="Valor do Dado:"
+                     text="Valor do Dado:",
+                     bg = "#af5a5e",
+                     fg = "white"
                      )
-label_dice.pack()
+label_dice.pack(pady=2)
 
 entry_dice = tk.Entry(window)
-entry_dice.pack()
+entry_dice.pack(pady=2)
 
 
 label_roleplay = tk.Label(
                         window, 
-                        text="Fator Roleplay:"
+                        text="Fator Roleplay:",
+                        bg = "#af5a5e",
+                        fg = "white"
                         )
                         
-label_roleplay.pack()
+label_roleplay.pack(pady=5)
 
 entry_roleplay = tk.Entry(window)
 entry_roleplay.pack()
@@ -71,16 +100,6 @@ botao = tk.Button(
                 text="Calcular", command=score
                 )
 
-botao.pack(pady=20)
+botao.pack(pady=5)
 
 window.mainloop()
-
-
-
-
-
-
-
-
-
-        
