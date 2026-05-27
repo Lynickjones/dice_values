@@ -15,7 +15,7 @@ def score():
 
     prof = prof_var.get()
 
-    if prof == "y":
+    if prof:
         bonus = 1
             
     else:
@@ -32,17 +32,25 @@ def score():
 
     except ValueError:
         messagebox.showerror("Erro", "Por favor, insira valores numéricos válidos para o dado e o fator de roleplay.")
-   
-        
-#Criar janela principal
+
+
+       
+
+#Main Window
 
 window = tk.Tk()
 window.title("flow D20")
 window.geometry("400x200")
+window.resizable(False, False)
+
+icon = tk.PhotoImage(file=r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\icon1.png")
+icon2 = tk.PhotoImage(file=r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\icon2.png") 
+
 
 window_bg = tk.PhotoImage(file=r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\background_1.png")
 bg_label = tk.Label(window, image=window_bg)
 bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+bg_label.lower()
 
 #Proficiencia check
 
@@ -51,9 +59,8 @@ prof_check = tk.Checkbutton(
                         window, 
                         text="Proficiência", 
                         variable=prof_var,
-                        bg = "red",
-                        fg = "white",
-                        font = ("times new roman", 12, "bold")
+                        bg = "#af5a5e",
+                        font = ("times new roman", 10, "bold")
                         )
 
 prof_check.pack(pady=1)
@@ -64,7 +71,9 @@ botao2 = tk.Button(
     command=roll,
     bg = "red",
     fg = "white",
-    font = ("times new roman", 12, "bold") 
+    font = ("times new roman", 12, "bold"),
+    image = icon ,
+    compound = "left" 
 )
 
 botao2.pack(pady=2)
@@ -73,7 +82,9 @@ botao2.pack(pady=2)
 label_dice = tk.Label(window,
                      text="Valor do Dado:",
                      bg = "#af5a5e",
-                     fg = "white"
+                     fg = "white",
+                     image = icon2,
+                     compound = "left"
                      )
 label_dice.pack(pady=2)
 
@@ -101,5 +112,6 @@ botao = tk.Button(
                 )
 
 botao.pack(pady=5)
+
 
 window.mainloop()
