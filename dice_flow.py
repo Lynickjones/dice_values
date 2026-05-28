@@ -40,7 +40,7 @@ def score():
 
 window = tk.Tk()
 window.title("flow D20")
-window.geometry("600x200")
+window.geometry("600x220")
 window.resizable(False, False)
 #Image Files here!
 
@@ -138,8 +138,8 @@ def charset(name, x, y, img_char):
 prof_check.pack(pady=1)
 
 charset("Kyle", 0.05, 0.03, img_char[0])
-charset("Leora", 0.2, 0.03, img_char[1])
+charset("Leora", 0.23, 0.03, img_char[1])
 charset("Mike", 0.05, 0.5, img_char[2])
-charset("O J", 0.2, 0.5, img_char[3])
+charset("O J", 0.23, 0.5, img_char[3])
 
 window.mainloop()
