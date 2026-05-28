@@ -40,14 +40,15 @@ def score():
 
 window = tk.Tk()
 window.title("flow D20")
-window.geometry("400x200")
+window.geometry("600x200")
 window.resizable(False, False)
+#Image Files here!
 
-icon = tk.PhotoImage(file=r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\icon1.png")
-icon2 = tk.PhotoImage(file=r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\icon2.png") 
+icon = tk.PhotoImage(file=r"C:\Users\lynic\OneDrive\Desktop\pixel_values\pics\icon1.png")
+icon2 = tk.PhotoImage(file=r"C:\Users\lynic\OneDrive\Desktop\pixel_values\pics\icon2.png") 
 
 
-window_bg = tk.PhotoImage(file=r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\background_1.png")
+window_bg = tk.PhotoImage(file=r"C:\Users\lynic\OneDrive\Desktop\pixel_values\pics\background_1.png")
 bg_label = tk.Label(window, image=window_bg)
 bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 bg_label.lower()
@@ -113,5 +114,31 @@ botao = tk.Button(
 
 botao.pack(pady=5)
 
+img_char = [
+    tk.PhotoImage(file=r"C:\Users\lynic\OneDrive\Desktop\dice_flow\dice_values\pics\char1.png"),
+    tk.PhotoImage(file=r"C:\Users\lynic\OneDrive\Desktop\dice_flow\dice_values\pics\char2.png"),
+    tk.PhotoImage(file=r"C:\Users\lynic\OneDrive\Desktop\dice_flow\dice_values\pics\char3.png"),
+    tk.PhotoImage(file=r"C:\Users\lynic\OneDrive\Desktop\dice_flow\dice_values\pics\char4.png")
+]
+
+def charset(name, x, y, img_char):
+    char = tk.Checkbutton(
+                        window, 
+                        text=name, 
+                        variable=prof_var,
+                        bg = "#af5a5e",
+                        font = ("times new roman", 10),
+                        image = img_char
+                        )
+    char.place(relx = x, rely = y)
+
+
+
+prof_check.pack(pady=1)
+
+charset("Kyle", 0.1, 0.1, img_char[0])
+charset("Leora", 0.5, 0.1, img_char[1])
+charset("Kyle", 0.1, 0.5, img_char[2])
+charset("Kyle", 0.5, 0.5, img_char[3])
 
 window.mainloop()
