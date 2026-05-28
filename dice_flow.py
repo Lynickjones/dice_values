@@ -40,16 +40,15 @@ def score():
 
 window = tk.Tk()
 window.title("flow D20")
-<<<<<<< HEAD
-window.geometry("600x220")
+window.geometry("700x220")
 window.resizable(False, False)
 #Image Files here!
 
-icon = tk.PhotoImage(file=r"C:\Users\lynic\OneDrive\Desktop\pixel_values\pics\icon1.png")
-icon2 = tk.PhotoImage(file=r"C:\Users\lynic\OneDrive\Desktop\pixel_values\pics\icon2.png") 
+icon = tk.PhotoImage(file=r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\icon1.png")
+icon2 = tk.PhotoImage(file=r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\icon2.png") 
 
 
-window_bg = tk.PhotoImage(file=r"C:\Users\lynic\OneDrive\Desktop\dice_flow\dice_values\pics\background_0.png")
+window_bg = tk.PhotoImage(file=r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\background_0.png")
 bg_label = tk.Label(window, image=window_bg)
 bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 bg_label.lower()
@@ -116,11 +115,27 @@ botao = tk.Button(
 botao.pack(pady=5)
 
 img_char = [
-    ImageTk.PhotoImage(Image.open(r"C:\Users\lynic\OneDrive\Desktop\dice_flow\dice_values\pics\char1.png").resize((70,70), Image.NEAREST)),
-    ImageTk.PhotoImage(Image.open(r"C:\Users\lynic\OneDrive\Desktop\dice_flow\dice_values\pics\char2.png").resize((70,70), Image.NEAREST)),
-    ImageTk.PhotoImage(Image.open(r"C:\Users\lynic\OneDrive\Desktop\dice_flow\dice_values\pics\char3.png").resize((70,70), Image.NEAREST)),
-    ImageTk.PhotoImage(Image.open(r"C:\Users\lynic\OneDrive\Desktop\dice_flow\dice_values\pics\char4.png").resize((70,70), Image.NEAREST))
+    ImageTk.PhotoImage(Image.open(r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\char1.png").resize((70,70), Image.NEAREST)),
+    ImageTk.PhotoImage(Image.open(r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\char2.png").resize((70,70), Image.NEAREST)),
+    ImageTk.PhotoImage(Image.open(r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\char3.png").resize((70,70), Image.NEAREST)),
+    ImageTk.PhotoImage(Image.open(r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\char4.png").resize((70,70), Image.NEAREST))
 ]
+
+
+
+scores_pic = ImageTk.PhotoImage(Image.open(r"C:\Users\Lynick Jones\Desktop\Palythoa_ID\Dice_set\pics\scores.PNG").resize((250 , 150), Image.NEAREST))
+
+frame_img = tk.Frame(window, bg="#af5a5e", width=250, height=150)
+frame_img.place(relx=0.98, rely=0.5, anchor="e")
+
+frame_img.pack_propagate(False)
+
+
+label_img = tk.Label(frame_img, image=scores_pic, bg="#af5a5e")
+label_img.pack(expand=True)
+
+
+
 
 def charset(name, x, y, img_char):
     char = tk.Checkbutton(
@@ -139,7 +154,6 @@ def charset(name, x, y, img_char):
 prof_check.pack(pady=1)
 
 charset("Kyle", 0.05, 0.03, img_char[0])
-<<<<<<< HEAD
 charset("Leora", 0.23, 0.03, img_char[1])
 charset("Mike", 0.05, 0.5, img_char[2])
 charset("O J", 0.23, 0.5, img_char[3])
